@@ -1,0 +1,16 @@
+node_modules
+.tmp
+.sass-cache
+*.swp
+*.swo
+.DS_Store
+*.DS_Store
+.idea/
+.idea/ffan_webapp.iml
+.idea/encodings.xml
+.idea/misc.xml
+dist/
+output
+.idea
+npm-debug.log
+logs/
