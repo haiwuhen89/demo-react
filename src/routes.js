@@ -15,8 +15,9 @@ import createBrowserHistory from 'history/lib/createBrowserHistory'
 
 
 
-import Login from './page/Login/Login.js';
-import Home from './page/Home/Home.js';
+import Login from './containers/login.js';
+// import Home from './page/Home/Home.js';
+import Home from './containers/home.js';
 
 //history的配置
 const historyOptions = {
@@ -24,7 +25,7 @@ const historyOptions = {
 };
 
 const routes = (
-	<Router history={createBrowserHistory(historyOptions)}>
+	<Router history={browserHistory}>
 		<Route path='/' onEnter={()=>{}}>
 			<IndexRoute component={Login} />
 			<Route path="login" component={Login} />

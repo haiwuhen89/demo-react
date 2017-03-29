@@ -6,20 +6,36 @@ import React from "react";
 import './index.less';
 
 class Login extends React.Component{
-     constructor(props){
-        super(props)
-        console.log('login');       
+
+  constructor(props){
+    super(props)
+    this.state = {
+      page :''
     }
-    render(){
-        return (
-        	<div className="login">
-        		<p className="login-title">登录果仁宝账号付款</p>
+  }
 
-
-
-        	</div>
-        );
+  componentWillReceiveProps(nextProps){
+    if (nextProps.login && nextProps.login.state.page) {
+      let page = nextProps.login.state.page
+      this.setState({
+        page:page
+      });
     }
+  }
+
+  componentDidMount(){
+    setTimeout(()=> {
+      this.props.changePageToLogin(); 
+    },3000);
+  }
+
+  render(){
+    return (
+      <div className="login">
+        <p className="login-title">Page:{this.state.page}</p>
+      </div>
+    );
+  }
 }
 
 export default Login;
