@@ -10,9 +10,9 @@ import { Router, Route, IndexRoute, Redirect,hashHistory,browserHistory } from '
 // hash router
 import createHashHistory from 'history/lib/createHashHistory';
 // html5 router 
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
-
+import Common from './page/Common/Common';
 
 
 import Login from './containers/login.js';
@@ -27,10 +27,12 @@ const historyOptions = {
 const routes = (
 	<Router history={browserHistory}>
 		<Route path='/' onEnter={()=>{}}>
-			<IndexRoute component={Login} />
-			<Route path="login" component={Login} />
-			<Route path="home" component={Home} />
-			<Route path="*" component={ Login }/>
+			<Route component={ Common }>
+				<IndexRoute component={Login} />
+				<Route path="login" component={Login} />
+				<Route path="home" component={Home} />
+				<Route path="*" component={ Login }/>
+			</Route>
 		</Route>
 	</Router>
 );

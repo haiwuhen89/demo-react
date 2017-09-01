@@ -7,7 +7,7 @@ const initialState = {
 const actionsMap = {
   changePageToLogin(state, action){
     state.page = action.data;
-    return {state}
+    return {...state};
   },
 };
 

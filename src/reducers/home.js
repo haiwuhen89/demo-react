@@ -7,8 +7,12 @@ const initialState = {
 const actionsMap = {
   changePage(state, action){
     state.isLogin = action.data;
-    return {state}
+    return { ...state}
   },
+  homeAjax(state, action){
+  	state.homeAjax = action.data;
+  	return { ...state}
+  }
 };
 
 export default (state = initialState, action) => {

@@ -1,4 +1,6 @@
-
+/*
+ ** gengmangmang
+ */
 
 'use strict';
 
@@ -15,8 +17,9 @@ class Login extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    if (nextProps.login && nextProps.login.state.page) {
-      let page = nextProps.login.state.page
+    if (nextProps.login && nextProps.login.page) {
+      let page = nextProps.login.page;
+      console.log(page);
       this.setState({
         page:page
       });
@@ -26,7 +29,7 @@ class Login extends React.Component{
   componentDidMount(){
     setTimeout(()=> {
       this.props.changePageToLogin(); 
-    },3000);
+    },1000);
   }
 
   render(){
