@@ -61,26 +61,39 @@ class Home extends React.Component{
     return  (
       <div className="home">
         <div className="home-type">
+          <div className="index-search">
+            <section className="index-search-top-wrapper">
+              <form className="index-top-search">
+                <div className="input-wrapper">
+                  <input className="input" type="search" data-role="input" />
+                  <div className="input-other">
+                    <button className="submit" type="submit" data-role="submit"></button>
+                    <span className="input-placeholder">搜索商家或地点</span>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
           <section className="index-catg">
             <ul className="catg-wraps">
               <li className="wrap">
-                <a className="item">
+                <a className="item item1">
                   <div className="img"></div>
                   <div className="word">美食</div>
                 </a>
-                <a className="item">
+                <a className="item item2">
                   <div className="img"></div>
                   <div className="word">电影演出</div>
                 </a>
-                <a className="item">
+                <a className="item item3">
                   <div className="img"></div>
                   <div className="word">酒店</div>
                 </a>
-                <a className="item">
+                <a className="item item4">
                   <div className="img"></div>
                   <div className="word">KTV</div>
                 </a>
-                <a className="item">
+                <a className="item item5">
                   <div className="img"></div>
                   <div className="word">外卖</div>
                 </a>
