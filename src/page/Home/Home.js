@@ -6,6 +6,8 @@
 
 import React from "react";
 
+import HomeContent from './part/HomeContent';
+import HomeFeed from './part/HomeFeed';
 import './home.less';
 
 
@@ -117,11 +119,19 @@ class Home extends React.Component{
                   <div className="img"></div>
                   <div className="word">代金券</div>
                 </a>
-
               </li>
             </ul>
           </section>
         </div>
+        <HomeContent />
+        <section className="home-feed-title">
+          <h3 className="home-feed-title-text">
+            <span className="home-feed-title-icon">
+              猜你喜欢
+            </span>
+          </h3>
+        </section>
+        <HomeFeed />
         <div className="goods">
           {this.getGoods()}
         </div>
