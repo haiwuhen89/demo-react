@@ -131,7 +131,7 @@ class Home extends React.Component{
             </span>
           </h3>
         </section>
-        <HomeFeed />
+        <HomeFeed {...this.props} />
         <div className="goods">
           {this.getGoods()}
         </div>
