@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
  
 module.exports = {
   entry: [
@@ -28,10 +29,41 @@ module.exports = {
         test: /\.css$/, 
         loader: 'style-loader!css-loader' 
       },
+      // IMAGE
+      {
+          test: /.(gif|jpg|png)$/,
+          loader: 'file?name=img-[hash].[ext]'
+      },
+      // FONT
+      {
+          test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
+          loader: "file"
+      }, {
+          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+          loader: "file"
+      }, {
+          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+          loader: "file"
+      }, {
+          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+          loader: "file"
+      }
     ],
   },
   plugins: [
       // new webpack.NoEmitOnErrorsPlugin(),
-      // new webpack.HotModuleReplacementPlugin()
+      // new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('prod')
+      }),
+      new HtmlWebpackPlugin({
+        title: 'T11',
+        favicon:'',
+        hash: false,
+        inject: false,
+        appMountId: 'app',
+        filename: 'index.html',
+        template: path.join( __dirname,'/index.html'),
+      }),
   ],
 };
