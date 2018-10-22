@@ -5,7 +5,7 @@
 'use strict';
 
 import React from 'react';
-import { Router, Route, IndexRoute, Redirect,hashHistory,browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, Redirect,hashHistory,browserHistory,useRouterHistory } from 'react-router';
 
 // hash router
 import createHashHistory from 'history/lib/createHashHistory';
@@ -24,8 +24,10 @@ const historyOptions = {
 	queryKey : false
 };
 
+var appHistory = useRouterHistory(createHashHistory)({queryKey:false});
+
 const routes = (
-	<Router history={hashHistory}>
+	<Router history={appHistory}>
 		<Route path='/' onEnter={()=>{}}>
 			<Route component={ Common }>
 				<IndexRoute component={Login} />

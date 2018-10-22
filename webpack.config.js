@@ -66,10 +66,8 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
         title: 'T11',
-        favicon:'',
         hash: false,
-        inject: false,
-        appMountId: 'app',
+        inject: 'body', //是否自动在模板文件添加 自动生成的js文件链接
         filename: 'index.html',
         template: path.join( __dirname,'/index.html'),
       }),
