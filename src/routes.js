@@ -25,7 +25,7 @@ const historyOptions = {
 };
 
 const routes = (
-	<Router history={browserHistory}>
+	<Router history={hashHistory}>
 		<Route path='/' onEnter={()=>{}}>
 			<Route component={ Common }>
 				<IndexRoute component={Login} />

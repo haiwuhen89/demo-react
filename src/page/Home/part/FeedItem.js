@@ -25,10 +25,10 @@ class FeedItem extends React.Component{
 
   render(){
     let info = this.props.info;
-    console.log(info.images[0]);
-    let image1 = info.images[0];
-    let image2 = info.images[1];
-    let image3 = info.images[2];
+    console.log(info.images&&info.images[0]);
+    let image1 = info.images&&info.images[0];
+    let image2 = info.images&&info.images[1];
+    let image3 = info.images&&info.images[2];
 
     return  (
       <div className="feed-item">   
