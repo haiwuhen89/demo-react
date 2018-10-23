@@ -27,6 +27,7 @@ module.exports = {
         query: {
             compact: false
         },
+        exclude: /node_modules/,
         include: path.join(__dirname, 'src')
       },
       { 
